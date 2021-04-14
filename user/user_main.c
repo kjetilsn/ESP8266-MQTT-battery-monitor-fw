@@ -211,8 +211,8 @@ LOCAL command_element commandElements[] = {
 
 LOCAL char *schema = "hwstar_battmon";
 LOCAL char *commandTopic, *statusTopic;
-LOCAL char *controlTopic = "/node/control";
-LOCAL char *infoTopic = "/node/info";
+LOCAL char *controlTopic = "node/control";
+LOCAL char *infoTopic = "node/info";
 LOCAL flash_handle_s *configHandle;
 LOCAL os_timer_t mainTimer, i2cTimer;
 LOCAL i2c_t i2c;
