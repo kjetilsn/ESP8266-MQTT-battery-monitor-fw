@@ -33,6 +33,14 @@ Command messages are sent using JSON encoding as follows:
 
 {"command":"$COMMAND","param":"$PARAM"} For commands with a parameter
 
+I.e: 
+
+{"command":"ssid","param":"new_ssid"}
+
+{"command":"wifipass","param":"new_wifipass"}
+
+{"command":"shuntamps","param":"new_value"}
+
 Because of limitations with the Espressif JSON parser library, all numbers should be sent as text fields 
 (i.e. quoted)
 
@@ -51,7 +59,7 @@ MQTT commands supported:
 
 Notes:
 * $ indicates a variable. e.g.: $COMMAND would be one of the commands in the table above.
-* Sending an ssid, or wifi command without "parameter":"$PARAM" will return the current value.
+* Sending an ssid, or wifi command without "param":"$PARAM" will return the current value.
 * shuntamps, shuntmv, ssid, wifipass, mqttdevpath change not effective until next system restart
 
 **Power on Message**
