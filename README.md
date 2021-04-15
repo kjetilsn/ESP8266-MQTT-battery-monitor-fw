@@ -31,7 +31,7 @@ Command messages are sent using JSON encoding as follows:
 
 {"command":"command from table below"} For commands without a parameter
 
-{"command":"$COMMAND","param","$PARAM"} For commands with a parameter
+{"command":"$COMMAND","param":"$PARAM"} For commands with a parameter
 
 Because of limitations with the Espressif JSON parser library, all numbers should be sent as text fields 
 (i.e. quoted)
