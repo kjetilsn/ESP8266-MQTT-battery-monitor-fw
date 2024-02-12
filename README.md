@@ -1,3 +1,14 @@
+Board can also be used with (OMG)OpenMQTTgateway:
+https://docs.openmqttgateway.com/
+
+OMG supports ESP8266 and has a "module" for the INA266 among many other capabilities.
+Some parameters that need changing:
+
+
+
+
+
+
 **ESP8266-MQTT-battery-monitor-fw**
 ==========
 This is an implementation of an MQTT Battery Monitor.
