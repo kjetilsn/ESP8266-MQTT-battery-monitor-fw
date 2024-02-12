@@ -1,18 +1,27 @@
-**Use with OpenMQTTgateway**
+**Alternative firmware: OpenMQTTgateway**
+==========
+[Board](https://github.com/hwstar/ESP8266-MQTT-battery-monitor-hw) supports [OpenMQTTgateway (OMG)](https://docs.openmqttgateway.com/):
 
-Board can also be used with (OMG)OpenMQTTgateway:
-https://docs.openmqttgateway.com/
 
-OMG supports ESP8266 and has a "module" for the INA266 among many other capabilities.
-Download the source and open in platform.io
-Some parameters that need changing:
+OMG supports ESP8266 and has a "sensor" for the INA266 among many other capabilities. OMG also integrate very well with Home Assistant.
+
+Download the source and open in platform.io. 
+Include "ZsensorINA226" in your configuration and make changes:
 
 File: .pio\libdeps\nodemcuv2-ina226\Arduino-INA226\INA226.h
-    #define INA226_ADDRESS              (0x45)
-File: .pio\libdeps\nodemcuv2-ina226\Arduino-INA226\INA226.cpp
-    Wire.begin(13,12);
+```
+#define INA226_ADDRESS              (0x45)
+```
 
-**ESP8266-MQTT-battery-monitor-fw**
+File: .pio\libdeps\nodemcuv2-ina226\Arduino-INA226\INA226.cpp
+```
+Wire.begin(13,12);
+```
+Replace original ZsensorDS1820.ino with [this](https://github.com/kjetilsn/OpenMQTTGateway/blob/development/main/ZsensorINA226.ino)
+
+The Board also has two "outputs", where it is possible to use at least one of them with the "ZactuatorONOFF"
+
+**Original firmware: ESP8266-MQTT-battery-monitor-fw**
 ==========
 This is an implementation of an MQTT Battery Monitor.
 Allows a 12V battery to be monitored via WIFI. Code is compiled using the toolchain referenced below.
