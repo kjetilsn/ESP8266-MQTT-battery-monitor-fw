@@ -1,13 +1,16 @@
+**Use with OpenMQTTgateway**
+
 Board can also be used with (OMG)OpenMQTTgateway:
 https://docs.openmqttgateway.com/
 
 OMG supports ESP8266 and has a "module" for the INA266 among many other capabilities.
+Download the source and open in platform.io
 Some parameters that need changing:
 
-
-
-
-
+File: .pio\libdeps\nodemcuv2-ina226\Arduino-INA226\INA226.h
+    #define INA226_ADDRESS              (0x45)
+File: .pio\libdeps\nodemcuv2-ina226\Arduino-INA226\INA226.cpp
+    Wire.begin(13,12);
 
 **ESP8266-MQTT-battery-monitor-fw**
 ==========
